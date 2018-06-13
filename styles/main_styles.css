@@ -118,11 +118,11 @@ p a:hover::after
 }
 ::selection
 {
-	
+
 }
 p::selection
 {
-	
+
 }
 h1{font-size: 48px;}
 h2{font-size: 36px;}
@@ -139,14 +139,14 @@ h1, h2, h3, h4, h5, h6
 	color: #384158;
 	margin-bottom: 0;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 .form-control
 {
@@ -320,12 +320,34 @@ section
 }
 .login_button
 {
-	width: 160px;
+	position: absolute;
+
+	width: 80px;
 	height: 100%;
-	background: #f3f3f3;
+	background: #14BDEE;
 	text-align: center;
+	z-index: 99;
+	border: 5px solid #262626;
+	box-sizing: border-box;
 }
 .login_button a
+{
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 30px;
+	color: #384158;
+}
+.register_button
+{
+	position: absolute;
+	right: 0px;
+	width: 80px;
+	height: 100%;
+	background: #14BDEE;
+	text-align: center;
+}
+.register_button a
 {
 	display: block;
 	font-size: 14px;
@@ -490,6 +512,15 @@ section
 	display: block;
 	position: relative;
 	width: 40%;
+}
+.header_search_text{
+	position: relative;
+	right: 90px;
+
+}
+.header_search_text p{
+	color: black;
+	font-size: 20px;
 }
 .header_search_container
 {
@@ -715,9 +746,9 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: rgba(0,0,0,0.4) !important;
-} 
+}
 .menu .search_input:-ms-input-placeholder
-{ 
+{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
@@ -742,6 +773,7 @@ section
 }
 .section_title
 {
+	padding-bottom: 10px;
 	line-height: 1.2;
 }
 .section_subtitle
@@ -765,7 +797,7 @@ section
 .home
 {
 	width: 100%;
-	height: 850px;
+	height: 650px;
 }
 .home_slider_container
 {
@@ -799,7 +831,7 @@ section
 .home_slider_title
 {
 	font-family: 'Roboto Slab', serif;
-	font-size: 60px;
+	font-size: 30px;
 	font-weight: 700;
 	line-height: 1.2;
 	color: #384158;
@@ -855,9 +887,9 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #b5b8be !important;
-} 
+}
 .home_search_input:-ms-input-placeholder
-{ 
+{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
@@ -885,6 +917,13 @@ section
 	background-repeat: no-repeat;
 	padding-right: 20px;
 	padding-left: 20px;
+}
+.dropdown-style{
+	border: none;
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+
 }
 .home_search_button
 {
@@ -946,6 +985,7 @@ section
 	background: #FFFFFF;
 	padding-top: 93px;
 	padding-bottom: 103px;
+
 }
 .features_row
 {
@@ -962,6 +1002,7 @@ section
 }
 .feature:hover
 {
+	border-radius: 10px;
 	box-shadow: 0px 5px 40px rgba(29,34,47,0.15);
 }
 .feature_icon
@@ -977,8 +1018,11 @@ section
 	position: relative;
 	font-size: 20px;
 	margin-top: 23px;
+	margin-bottom: 10px;
 }
-
+.feature_text p{
+	line-height: 20px;
+}
 /*********************************
 8. Courses
 *********************************/
@@ -1275,10 +1319,10 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #b5b8be !important;
-} 
+}
 .counter_input:-ms-input-placeholder,
 .counter_text_input:-ms-input-placeholder
-{ 
+{
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #b5b8be !important;
@@ -1785,9 +1829,9 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #FFFFFF !important;
-} 
+}
 .newsletter_input:-ms-input-placeholder
-{ 
+{
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #FFFFFF !important;
@@ -2021,4 +2065,18 @@ section
 .cr_list li a:hover
 {
 	color: #14bdee;
+}
+.home_search_button:active{
+	color: black;
+}
+/* Font Color */
+.font-color-white{
+	color: white;
+}
+.font-color-black{
+	color: black;
+}
+.font-color-f2f2f2{
+	color: #f2f2f2;
+	text-decoration: none;
 }

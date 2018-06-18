@@ -386,7 +386,12 @@ section
 .logo,
 .logo_text
 {
+
 	display: inline-block;
+}
+.logo_text img{
+	width: auto;
+	height: 110px;
 }
 .logo
 {
@@ -1906,6 +1911,10 @@ section
 .footer_logo_text span
 {
 	color: #14bdee;
+}
+.footer_logo_text img{
+	width: auto;
+	height: 40px;
 }
 .footer_title
 {

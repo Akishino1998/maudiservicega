@@ -12,3 +12,6 @@ Namabahin template form
 
 v0.3.2
 Ganti template form login
+
+v0.3.3
+Penambahan file logo + font logo

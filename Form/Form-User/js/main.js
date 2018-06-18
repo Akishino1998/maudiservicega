@@ -12,7 +12,7 @@
             else {
                 $(this).removeClass('has-val');
             }
-        })    
+        })
     })
 
     /*==================================================================
@@ -28,7 +28,6 @@
                 check=false;
             }
         }
-
         return check;
     });
 
@@ -63,6 +62,6 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+
 
 })(jQuery);

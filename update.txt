@@ -15,3 +15,6 @@ Ganti template form login
 
 v0.3.3
 Penambahan file logo + font logo
+
+v0.4
+Form login dan Register (Kurang backgroundnya saja)

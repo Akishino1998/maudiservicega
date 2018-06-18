@@ -16,9 +16,9 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(https://www.freeimageslive.co.uk/files/images010/electronics_green_frame.jpg);">
+				<div class="login100-form-title" style="background-image: url(../../images/background/login-background.jpg);">
 					<span class="login100-form-title-1">
-						Login
+						REGISTERNYA <br /><br /><br /><br /><br /><br /><br /><br /><br /><span style="color:#000">Nyervis<span style="color:#14bdee">ga</span></span>
 					</span>
 				</div>
 
@@ -31,33 +31,26 @@
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Password Kamu ....">
+						<input class="input100" type="password" name="pass" id="password" placeholder="Password Kamu ...." required>
 						<span class="focus-input100"></span>
 					</div>
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Ulangi Password</span>
+						<input class="input100" type="password" name="pass" id="repassword" placeholder="Ulangi Password Kamu ...." required>
 
-					<div class="flex-sb-m w-full p-b-30">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
+						<span class="focus-input100"></span>
 
-						<div>
-							<a href="#" class="txt1">
-								Lupa Password?
-							</a>
-						</div>
 					</div>
-
+					<div class="alert-password">
+						<span id='message'></span>
+					</div>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Masuk
+						<button class="login100-form-btn" id="btn-submit">
+							Register
 						</button>
 						<div class="register-form-btn">
-							<a href="lul">Belum Punya Akun?</a>
+							<a href="lul">Sudah Punya Akun?</a>
 						</div>
-
 					</div>
 				</form>
 
@@ -68,6 +61,22 @@
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+$(function () {
+	$("#btn-submit").click(function () {
+		var password = $("#password").val();
+		var confirmPassword = $("#repassword").val();
+		if (password != confirmPassword) {
+			$('#message').html('Password Tidak Sama').css('color', 'red');
+			return false;
+		}
+		else{
+			$('#message').html('').css('color', 'green');
+		}
+		return true;
+	});
+});
 
+	</script>
 </body>
 </html>

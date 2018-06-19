@@ -24,3 +24,6 @@ Update logo di home
 
 v0.4.1.1
 Update hover di login dan register (tinggal fixkan background belakangnya saja)
+
+v0.5
+Fix design form login dan register

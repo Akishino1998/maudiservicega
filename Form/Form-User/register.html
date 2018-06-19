@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Registernya | Nyervisga?</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/logonyervisga.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -17,17 +17,17 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100 hvr-glow">
 				<div class="login100-form-title" style="background-image: url(../../images/background/login-background.jpg);">
 					<span class="login100-form-title-1">
-						REGISTERNYA <br /><br /><br /><br /><br /><br /><br /><br /><br /><span style="color:#000">Nyervis<span style="color:#14bdee">ga</span></span>
+						REGISTERNYA <br /><br /><br /><br /><br /><br /><br /><br /><br /><a href="../../index.html"><span style="color:#000">Nyervis<span style="color:#14bdee">ga</span></span></a>
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="register.html" method="get">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Username Kamu ....">
+						<input class="input100" type="text" name="username" placeholder="Username Kamu ...." required>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -50,12 +50,14 @@
 						<button class="login100-form-btn" id="btn-submit">
 							Register
 						</button>
-						<a href="#" class="hvr-icon-forward register-form-btn">
+						<a href="login.html" class="hvr-icon-forward register-form-btn">
 						  Sudah Punya Akun?
 						  <i class="fa fa-chevron-circle-right hvr-icon"></i>
 						</a>
 					</div>
+					<a href="../../index.html" class="back-home">Kembali Ke Homenya.</a>
 				</form>
+
 
 			</div>
 		</div>
@@ -67,6 +69,30 @@
 	<script>
 $(function () {
 	$("#btn-submit").click(function () {
+		var password = $("#password").val();
+		var confirmPassword = $("#repassword").val();
+		if (password != confirmPassword) {
+			$('#message').html('Password Tidak Sama').css('color', 'red');
+			return false;
+		}
+		else{
+			$('#message').html('').css('color', 'green');
+		}
+		return true;
+	});
+	$("#password").mouseenter(function () {
+		var password = $("#password").val();
+		var confirmPassword = $("#repassword").val();
+		if (password != confirmPassword) {
+			$('#message').html('Password Tidak Sama').css('color', 'red');
+			return false;
+		}
+		else{
+			$('#message').html('').css('color', 'green');
+		}
+		return true;
+	});
+	$("#repassword").mouseenter(function () {
 		var password = $("#password").val();
 		var confirmPassword = $("#repassword").val();
 		if (password != confirmPassword) {

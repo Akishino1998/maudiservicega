@@ -30,3 +30,9 @@ Fix design form login dan register
 
 v0.5.1
 Materialize
+
+v0.6
+Update form biodata user
+
+v0.6.1
+Update form biodata user

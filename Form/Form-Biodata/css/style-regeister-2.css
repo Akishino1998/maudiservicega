@@ -12,14 +12,9 @@ body {
   background-color: #e3e3e3;
 
 }
-.container{
-    position: relative;
-    left: 20%;
-}
 h4 {
     color: #000;
   position: relative;
-  top: -40px;
   margin-bottom: 0px;
   text-align: center;
   font-size: 40px;
@@ -30,7 +25,7 @@ h5 {
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   font-size: 14px;
   font-family: 'Oswald', sans-serif;
 }
@@ -259,7 +254,15 @@ select option {
 }
 
 .combobox{
-  width: 235px;
+  width: 260px;
+}
+#combobox_kab{
+    position: relative;
+    left: 10px;
+}
+#combobox_kel{
+    position: relative;
+    left: 10px;
 }
 input[type="radio"]:checked + label,
 input:checked + label:before {

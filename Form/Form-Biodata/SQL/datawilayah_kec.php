@@ -11,6 +11,6 @@ if(mysqli_num_rows($hasil))
 }
 else
 {
-	echo "<option value='' id='items'>Pilih Provinsi</option><br>";
+	echo "<option value='' id='items'>Pilih Kecamatan</option><br>";
 }
  ?>

@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up Form</title>
+    <title>Biodatamu | Nyervisga?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -12,27 +12,27 @@
     <link rel="stylesheet" href="css/hover-min.css">
 </head>
 <body>
+
     <header class="header-two-bars">
     	<div class="header-first-bar">
     		<div class="header-limiter">
     			<h1><img src="image/logo/logonyervisga.png" class="img-fluid" alt="Responsive image" width="100"></h1>
     			<nav>
-    				<a href="#">Overview</a>
-    				<a href="#" class="selected">Surveys</a>
-    				<a href="#">Reports</a>
-    				<a href="#">Roles</a>
+    				<a href="form-biodata.php"  class="selected">Profilemu</a>
+    				<a href="change-password.php">Ganti Password</a>
     			</nav>
-    			<a href="#" class="logout-button">Logout</a>
+    			<a href="#" class="logout-button hvr-bounce-out">Logout</a>
     		</div>
     	</div>
     	<div class="header-second-bar">
     		<div class="header-limiter">
-    			<h2><a href="#">Survey name</a></h2>
+    			<h2><a href="#">Hai, <?php  ?></a></h2>
     			<nav>
-    				<a href="#"><i class="fa fa-comments-o"></i> Questions</a>
-    				<a href="#"><i class="fa fa-file-text"></i> Results</a>
-    				<a href="#"><i class="fa fa-group"></i> Participants</a>
-    				<a href="#"><i class="fa fa-cogs"></i> Settings</a>
+
+    				<a href="#"><i class="fa fa-file-text"></i> Data Elektronikmu</a>
+    				<!-- <a href="#"><i class="fa fa-group"></i> Participants</a> -->
+    				<!-- <a href="#"><i class="fa fa-cogs"></i> Settings</a> -->
+                    <a href="#"><i class="fa fa-comments-o"></i> Bertanya?</a>
     			</nav>
     		</div>
     	</div>
@@ -43,15 +43,16 @@
         <div class="row">
             <div class="col-3">
                 <center>
-                    <h4>Foto Profile Kamu</h4>
+                    <h4>Foto Kamu</h4>
                     <br>
                     <img src="image/profile-blank.png" alt="" class="img-rounded" width="200">
                     <br><br>
                     <?php
                         if(isset($_GET['edit'])){
+                            echo "<p>Size fotonya jangan besar-besar, ya!</p>";
                             echo "<div class='btn btn-default image-preview-input'>
-                                <input type='file' accept='image/png, image/jpeg, image/gif' name='input-file-preview'/>
-                            </div>
+                                    <input type='file' accept='image/png, image/jpeg, image/gif' name='input-file-preview'/>
+                                </div>
                             <button type='button' class='btn btn-primary'>Upload</button>";
                         }
                     ?>
@@ -140,7 +141,7 @@
                     </div>
                 </div>
                 <div class="row">
-            		<input type="submit" name="submit" value="Simpan!" id="submit" class="hvr-rectangle-in" />
+            		<!-- <input type="submit" name="submit" value="Simpan!" id="submit" class="hvr-rectangle-in" /> -->
             	</div>
             </div>
             <div class="col-3">
@@ -148,6 +149,9 @@
                 <center>
                 <?php
                     if (isset($_GET['edit'])) {
+                        echo "<a href='form-biodata.php?save=true'>
+                            <button type='button' class='btn btn-primary'>Simpan</button>
+                        </a>";
                         echo "<a href='form-biodata.php'>
                             <button type='button' class='btn btn-warning'>Cancel</button>
                         </a>";
@@ -162,9 +166,7 @@
         </div>
     </div>
 </form>
-<!-- <div class="container container-left">
-
-</div> -->
+<br><br>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
     <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>

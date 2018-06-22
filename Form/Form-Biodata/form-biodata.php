@@ -8,13 +8,35 @@
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style-regeister-2.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/header-second-bar.css">
+    <link rel="stylesheet" href="css/hover-min.css">
 </head>
 <body>
-<div class="container">
-    <a href="../../../index.html">
-        <img src="image/logo/textnyervisga.png" class="img-fluid" alt="Responsive image" width="200">
-    </a>
-</div>
+    <header class="header-two-bars">
+    	<div class="header-first-bar">
+    		<div class="header-limiter">
+    			<h1><img src="image/logo/logonyervisga.png" class="img-fluid" alt="Responsive image" width="100"></h1>
+    			<nav>
+    				<a href="#">Overview</a>
+    				<a href="#" class="selected">Surveys</a>
+    				<a href="#">Reports</a>
+    				<a href="#">Roles</a>
+    			</nav>
+    			<a href="#" class="logout-button">Logout</a>
+    		</div>
+    	</div>
+    	<div class="header-second-bar">
+    		<div class="header-limiter">
+    			<h2><a href="#">Survey name</a></h2>
+    			<nav>
+    				<a href="#"><i class="fa fa-comments-o"></i> Questions</a>
+    				<a href="#"><i class="fa fa-file-text"></i> Results</a>
+    				<a href="#"><i class="fa fa-group"></i> Participants</a>
+    				<a href="#"><i class="fa fa-cogs"></i> Settings</a>
+    			</nav>
+    		</div>
+    	</div>
+    </header>
 <br>
 <form class="" action="form-biodata.php" method="post">
     <div class="container">

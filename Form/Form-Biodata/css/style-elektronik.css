@@ -1,0 +1,124 @@
+.dropdown-item{
+    z-index: 99;
+}
+.bio {
+    position: relative;
+    top: 160px;
+    padding: 1em 3em 2em 3em;
+    background-color: #fff;
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+h4 {
+    color: #000;
+  position: relative;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+}
+h5 {
+  color: #000;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 10px;
+  /* letter-spacing: 2px; */
+  font-size: 14px;
+  font-family: 'Oswald', sans-serif;
+}
+#submit{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  transition: background-color 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#submit:hover, #submit:focus, #submit:active {
+  color: white;
+  background-color: #14BCED;
+}
+#submit:hover:before, #submit:focus:before, #submit:active:before {
+  -webkit-transform: scale(1), background, color;
+  transform: scale(1), background, color;
+}
+
+select {
+  height: 3.4em;
+  line-height: 2;
+}
+select:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+select:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+select:focus,
+select:active {
+  outline: 0;
+}
+select option {
+  background-color: white;
+  color: #000;
+}
+.row {
+  zoom: 1;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.col-half {
+  padding-right: 10px;
+  float: left;
+  width: 50%;
+}
+.col-half:last-of-type {
+  padding-right: 0;
+}
+.col-third {
+  padding-right: 10px;
+  float: left;
+  width: 33.33333333%;
+}
+.col-third:last-of-type {
+  padding-right: 0;
+}
+@media only screen and (max-width: 540px) {
+  .col-half {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+.combobox{
+  width: 260px;
+}
+#combobox_kab{
+    position: relative;
+    left: 10px;
+}
+#combobox_kel{
+    position: relative;
+    left: 10px;
+}
+input[type="radio"]:checked + label,
+input:checked + label:before {
+  background-color: #14BCED;
+  color: #fff;
+  border-color: #14BCED;
+}

@@ -2,19 +2,21 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Ubar Password | Nyervisga?</title>
+    <title>Biodatamu | Nyervisga?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style-regeister-2.css">
+    <link rel="stylesheet" href="css/style-service.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" href="../../styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/responsive.css">
     <link rel="stylesheet" href="css/dropdown.css">
 </head>
 <body>
     <div class="super_container">
         <header class="header">
+
+    		<!-- Top Bar -->
     		<div class="top_bar">
     			<div class="top_bar_container">
     				<div class="container">
@@ -44,19 +46,6 @@
     										<a href="#">Masuk</a>
     									</div>
                                     <?php }else{ ?>
-    									<!-- <div class="login_button hvr-grow login-sukses">
-                                            <div class="dropdown toggle">
-                                              <input id="t1" type="checkbox" checked>
-                                              <label for="t1">Toggle Menu</label>
-                                              <ul>
-                                                <li><a href="#">Item</a></li>
-                                                <li><a href="#">Product</a></li>
-                                                <li><a href="#">Text</a></li>
-                                                <li><a href="#">Page</a></li>
-                                                <li><a href="#">Thing</a></li>
-                                              </ul>
-                                            </div>
-    									</div> -->
                                         <div class="search-select">
                                             <span class="field">
                                                 <label class="seltext" for="opened"><span style="color: white;">...</span>Hai, <i class="icon list"></i></label>
@@ -149,46 +138,67 @@
         <div class="row">
             <div class="col-3">
                 <center>
-                    <h4>Foto Kamu</h4>
                     <br>
-                    <img src="image/profile-blank.png" alt="" class="img-rounded" width="200">
+                    <!-- <img src="image/profile-blank.png" alt="" class="img-rounded" width="200"> -->
                     <br><br>
                 </center>
             </div>
             <div class="col-6">
                 <center>
-                    <h4>Mau Ganti Password?</h4>
+                    <h4 class="hvr-underline-from-center">Mau Nyervis Apa?</h4>
                     <br>
                 </center>
-                <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Password Lama" name="passlama" required id="passlama" />
-                    <div class="input-icon"><i class="fa fa-key"></i></div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Password Baru" name="passbaru1" required id="passbaru1"/>
-                    <div class="input-icon"><i class="fa fa-key"></i></div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Ulangi Password Barumu" name="passbaru2"  required id="passbaru2" />
-                    <div class="input-icon"><i class="fa fa-key"></i></div>
-                </div>
-                <div class="row">
-            		<input type="submit" name="submit" value="Simpan!" id="submit" onclick="verivikasipasswor()" />
+                <div class="input-group">
+                    <select id="service">
+                        <option value="hide">--Pilih Elektronik Yang Mau Diservis--</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="pc">PC</option>
+                        <option value="mobo">Mother Board</option>
+                        <option value="tv">TV</option>
+                        <option value="2015">2015</option>
+                    </select>
             	</div>
+                <center>
+                    <button type="button" class="btn btn-primary hvr-grow" onclick="selectService()" style="width:255px; cursor: pointer;">Nyervisin Sekarang!</button>
+                </center>
             </div>
         </div>
+        <br><br><br>
+        <div class="row">
+
+            <div class="col-12">
+                <center>
+                    <h4 class="hvr-underline-from-center">Brand</h4>
+                    <hr>
+                    <img src="image/brand/acer.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/asus.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/google.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/iphone.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/microsoft.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/polytron.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/samsung.png" alt="" class="img-rounded" width="100">
+                    <img src="image/brand/toshiba.png" alt="" class="img-rounded" width="100">
+                </center>
+
+            </div>
+
+        </div>
+
     </div>
+
 </form>
-</form>
+
 <div class="footer-service">
+
     <?php include('../../layout/footer.php') ?>
 </div>
+
 <br><br>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
-    <script src="js/popper.js"></script>
     <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
     <script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
     <script src="../../plugins/easing/easing.js"></script>
@@ -197,24 +207,55 @@
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function(){
-        // loadData();
+
+$('select').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+    $this.addClass('select-hidden');
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+
+    var $listItems = $list.children('li');
+
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
     });
 
-    function loadData(){
-        var kodepos = document.getElementById('kodepos').value;
-        $.get('SQL/datawilayah_prov.php?id='+kodepos, function(data){
-            $('#combobox_prov').html(data);
-        });
-    }
-    function verivikasipasswor(){
-        var passlama = document.getElementById('passlama').value;
-        var passbaru1 = document.getElementById('passbaru1').value;
-        var passbaru2 = document.getElementById('passbaru2').value;
-        if (passbaru1 != passbaru2) {
-            swal(":(", "Password Baru Tidak Sama", "error");
-        }else{
-            swal(":D", "Password Berhasil Diubah!", "success");
-        }
-    }
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
+
+function selectService(){
+    var service = document.getElementById('service').value;
+    alert(service);
+}
 </script>

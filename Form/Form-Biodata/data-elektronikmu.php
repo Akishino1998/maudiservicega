@@ -68,14 +68,14 @@
                                                 <input id="opened" type="checkbox" />
                                               <ul class="select">
                                                 <li class="icon arrow"></li>
-                                                <li class="sel">
-                                                  <a href="#">Tentangku</a> <i class="icon list"></i>
+                                                <a href="form-biodata.php"><li class="sel">
+                                                  Tentangku<i class="icon list"></i>
+                                              </li></a>
+                                                <li>
+                                                  <a href="change-password.php">Ganti Password</a><i class="icon stat"></i>
                                                 </li>
                                                 <li>
-                                                  Ganti Password<i class="icon stat"></i>
-                                                </li>
-                                                <li>
-                                                  Data Elektronikku</i>
+                                                  <a href="data-elektronikmu.php">Data Elektronikku</a>
                                                 </li>
                                                 <li>
                                                   sign out<i class="icon sign"></i>
@@ -208,19 +208,17 @@
     </div>
 
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="footer-service">
+    <?php include('../../layout/footer.php') ?>
+</div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.bootstrap4.min.js"></script>
 <script src="js/popper.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="../../plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script>

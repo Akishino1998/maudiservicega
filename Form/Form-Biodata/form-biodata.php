@@ -14,35 +14,8 @@
     <link rel="stylesheet" href="css/dropdown.css">
 </head>
 <body>
-
-    <!-- <header class="header-two-bars">
-    	<div class="header-first-bar">
-    		<div class="header-limiter">
-    			<h1><img src="image/logo/logonyervisga.png" class="img-fluid" alt="Responsive image" width="100"></h1>
-    			<nav>
-    				<a href="form-biodata.php"  class="selected">Profilemu</a>
-    				<a href="change-password.php">Ganti Password</a>
-    			</nav>
-    			<a href="#" class="logout-button hvr-bounce-out">Logout</a>
-    		</div>
-    	</div>
-    	<div class="header-second-bar">
-    		<div class="header-limiter">
-    			<h2><a href="#">Hai, <?php  ?></a></h2>
-    			<nav>
-
-    				<a href="#"><i class="fa fa-file-text"></i> Data Elektronikmu</a>
-    				<a href="#"><i class="fa fa-group"></i> Participants</a>
-    				<a href="#"><i class="fa fa-cogs"></i> Settings</a>
-                    <a href="#"><i class="fa fa-comments-o"></i> Bertanya?</a>
-    			</nav>
-    		</div>
-    	</div>
-    </header> -->
 <div class="super_container">
     <header class="header">
-
-		<!-- Top Bar -->
 		<div class="top_bar">
 			<div class="top_bar_container">
 				<div class="container">
@@ -72,19 +45,6 @@
 										<a href="#">Masuk</a>
 									</div>
                                 <?php }else{ ?>
-									<!-- <div class="login_button hvr-grow login-sukses">
-                                        <div class="dropdown toggle">
-                                          <input id="t1" type="checkbox" checked>
-                                          <label for="t1">Toggle Menu</label>
-                                          <ul>
-                                            <li><a href="#">Item</a></li>
-                                            <li><a href="#">Product</a></li>
-                                            <li><a href="#">Text</a></li>
-                                            <li><a href="#">Page</a></li>
-                                            <li><a href="#">Thing</a></li>
-                                          </ul>
-                                        </div>
-									</div> -->
                                     <div class="search-select">
                                         <span class="field">
                                             <label class="seltext" for="opened"><span style="color: white;">...</span>Hai, <i class="icon list"></i></label>
@@ -115,8 +75,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Header Content -->
 		<div class="header_container">
 			<div class="container">
 				<div class="row">
@@ -135,16 +93,12 @@
 									<li><a href="courses.html" class="hvr-underline-from-center">Tentang Kami</a></li>
 								</ul>
 								<div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
-
 							</nav>
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Header Search Panel -->
 		<div class="header_search_container">
 			<div class="container">
 				<div class="row">
@@ -155,15 +109,12 @@
 								<div class="newsletter_title">Lacak Elekronik yang kamu service</div>
 								<div class="newsletter_subtitle"></div>
 							</div>
-
-							<!-- Newsletter Form -->
 							<div class="newsletter_form_container ml-lg-auto">
 								<form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
 									<input type="email" class="newsletter_input" placeholder="Kode Unik Nyervismu ...." required="required">
 									<button type="submit" class="newsletter_button">Lacak</button>
 								</form>
 							</div>
-
 						</div>
 					</div>
 				</div>
@@ -299,25 +250,20 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br>
 </form>
-<br><br><br><br>
+<div class="footer-service">
+    <?php include('../../layout/footer.php') ?>
+</div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
     <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
-    <script src="plugins/greensock/TweenMax.min.js"></script>
-    <script src="plugins/greensock/TimelineMax.min.js"></script>
-    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="plugins/greensock/animation.gsap.min.js"></script>
-    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="plugins/easing/easing.js"></script>
-    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="../../plugins/easing/easing.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
 
     <script>
         $(document).ready(function() {

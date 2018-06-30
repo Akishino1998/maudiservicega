@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="css/main_styles.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" href="css/dropdown.css">
+    <style media="screen">
+        th{
+            text-align: center;
+        }
+        th, td{
+            color:#000;
+        }
+    </style>
 </head>
 <body>
         <div class="super_container">

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main_styles.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/style-elektronik2.css">
 </head>
 <body>
 <div class="super_container">
@@ -145,108 +146,44 @@
             </div>
             <div class="col-6">
                 <center>
-                    <h4>Tentang Kamu</h4>
-                    <br>
+                    <h4>Data Elektronik yang mau kamu service</h4>
+                    <h9>*kosongin aja kalau enggak tau...</h9>
+                    <br><br><br />
                 </center>
-                <div class="input-group input-group-icon">
-                    <div class="col-half">
-                        <input type="text" placeholder="Nama Depan" name="nama_depan" />
-                        <div class="input-icon"><i class="fa fa-user"></i></div>
-                    </div>
-                    <div class="col-half">
-                        <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
-                    </div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" />
-                    <div class="input-icon"><i class="fa fa-street-view"></i></div>
+                <div class="input-group">
+                    <label class="field a-field a-field_a1 page__field">
+                        <input class="field__input" placeholder=" " >
+                        <span class="field__label-wrap">
+                        <span class="field__label">Merk</span>
+                        </span>
+                    </label>
                 </div>
                 <div class="input-group">
-                    <div class="col-third">
-                        <input type="text" placeholder="RT" name="rt" />
-                    </div>
-                    <div class="col-third">
-                        <input type="text" placeholder="RW" name="rw" />
-                    </div>
-                    <div class="col-third">
-                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" />
-                    </div>
+                    <label class="field a-field a-field_a1 page__field">
+                        <input class="field__input" placeholder=" ">
+                        <span class="field__label-wrap">
+                        <span class="field__label">No. Seri</span>
+                        </span>
+                    </label>
                 </div>
                 <div class="input-group">
-                    <div class="col-half">
-                        <!-- <input type="text" placeholder="Provinsi" name="provinsi" /> -->
-                        <select name="provinsi" id="combobox_prov" class="combobox">
-                          <option value="" selected="selected" id="items" >Pilih Provinsi</option>
-                        </select>
-                    </div>
-                    <div class="col-half">
-                        <!-- <input type="text" placeholder="Kabupaten" name="kabupaten" /> -->
-                        <select name="kabupaten" id="combobox_kab" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Kabupaten</option>
-                        </select>
-                    </div>
+                    <label class="field a-field a-field_a1 page__field">
+                        <input class="field__input field__input2" placeholder=" " required>
+                        <span class="field__label-wrap">
+                        <span class="field__label">First name</span>
+                        </span>
+                    </label>
                 </div>
                 <div class="input-group">
-                    <div class="col-half">
-                        <!-- <input type="combobox" placeholder="Kecamatan" name="kecamatan" /> -->
-                        <select name="kecamatan" id="combobox_kec" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Kecamatan</option>
-                        </select>
-                    </div>
-                    <div class="col-half">
-                        <!-- <input type="text" placeholder="Keluaran" name="kelurahan" /> -->
-                        <select name="kelurahan" id="combobox_kel" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Keluaran</option>
-                        </select>
-                    </div>
+                    <h2>Checkboxes</h2>
+  <div class="inputGroup">
+    <input id="option1" name="option1" type="checkbox"/>
+    <label for="option1">Option One</label>
+  </div>
                 </div>
-                <div class="input-group input-group-icon">
-                    <input type="email" placeholder="Email" name="email" />
-                    <div class="input-icon"><i class="fa fa-envelope"></i></div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="email" placeholder="No. Telp" name="nohp" id="nohp" />
-                    <div class="input-icon"><i class="fa fa-phone"></i></div>
-                </div>
-                <div class="row">
-                    <div class="col-half">
-                        <h5>Tanggal Lahir</h5>
-                        <div class="input-group">
-                            <input type="text" name="tgl_lahir" id="datepicker" placeholder="Tanggal Lahir" />
-                        </div>
-                    </div>
-                    <div class="col-half">
-                        <h5>Jenis Kelamin</h5>
-                        <div class="input-group">
-                        <input type="radio" name="gender" value="laki" id="gender-male"/>
-                        <label for="gender-male">Laki-Laki</label>
-                        <input type="radio" name="gender" value="perempuan" id="gender-female"/>
-                        <label for="gender-female">Perempuan</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-            		<!-- <input type="submit" name="submit" value="Simpan!" id="submit" class="hvr-rectangle-in" /> -->
-            	</div>
             </div>
             <div class="col-3">
-                <br><br>
-                <center>
-                <?php
-                    if (isset($_GET['edit'])) {
-                        echo "<a href='form-biodata.php?save=true'>
-                            <button type='button' class='btn btn-primary'>Simpan</button>
-                        </a>";
-                        echo "<a href='form-biodata.php'>
-                            <button type='button' class='btn btn-warning'>Cancel</button>
-                        </a>";
-                    }else{
-                        echo "<a href='form-biodata.php?edit=true'>
-                            <button type='button' class='btn btn-primary'>Edit Profilemu</button>
-                        </a>";
-                    }
-                 ?>
-                </center>
+                <!--  -->
             </div>
         </div>
     </div>
@@ -256,7 +193,6 @@
 </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
-    <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
@@ -265,58 +201,10 @@
     <script src="../../plugins/easing/easing.js"></script>
     <script src="js/custom.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('#datepicker').Zebra_DatePicker({
-                direction: ['1998-01-01', true],
-                format: 'l, d F Y',
-                months: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
-                days:['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
-                offset:[-300,10],
-                show_select_today: false,
-                lang_clear_date: "Hapus",
-            });
-        });
-
-        $('.select').on('click','li',function(){
-  $('#opened').click();
-  var $t = $(this),
-      $f = $('.field')
-      text = $t.text(),
-      icon = $t.find('i').attr('class');
-  $f.find('label').text(text);
-  $f.find('i').attr('class',icon)
-});
-$('.field').click(function(e){
-  e.preventDefault();
-  $('#opened').click();
-})
-
-
-    </script>
 
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function(){
-        loadData();
-    });
-
-    function loadData(){
-        var kodepos = document.getElementById('kodepos').value;
-        $.get('SQL/datawilayah_prov.php?id='+kodepos, function(data){
-            $('#combobox_prov').html(data);
-        });
-        $.get('SQL/datawilayah_kab.php?id='+kodepos, function(data){
-            $('#combobox_kab').html(data);
-        });
-        $.get('SQL/datawilayah_kec.php?id='+kodepos, function(data){
-            $('#combobox_kec').html(data);
-        });
-        $.get('SQL/datawilayah_kel.php?id='+kodepos, function(data){
-            $('#combobox_kel').html(data);
-        });
-    }
     $(document).click(function(event) {
       if(
         $('.toggle > input').is(':checked') &&
@@ -326,37 +214,3 @@ $('.field').click(function(e){
       }
     })
 </script>
-<?php
-if(isset($_POST['submit']))
-{
-    //Dapatkan Tanggal Lahir
-    $bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-    echo $_POST['nama_depan']." ".$_POST['nama_belakang'];
-    $tgl = explode(" ",$_POST['tgl_lahir']);
-    $getBulan = 0;
-    //getBulan
-    for ($i=0; $i < count($bulan); $i++) {
-        if ($tgl[2] == $bulan[$i]) {
-            $getBulan = $i+1;
-        }
-    }
-    $tgl_lahir = $tgl[3]."-0".$getBulan."-".$tgl[1];
-
-    $nama_depan = $_POST['nama_depan'];
-    $nama_belakang = $_POST['nama_belakang'];
-    $gender = $_POST['gender'];
-    $kode_pos = $_POST['kode_pos'];
-    $alamat = $_POST['alamat'];
-    $kecamatan = $_POST['kecamatan'];
-    $kelurahan = $_POST['kelurahan'];
-    $provinsi = $_POST['provinsi'];
-    $nohp = $_POST['nohp'];
-    $email = $_POST['email'];
-
-
-    //cek database dulu sebelum insert data
-    //dan ingat, user kadang enggak ngisi semuanya
-    //user kadang ngisi seperlunya saja, jadi enggak pasti ngisinya
-    //
-}
-?>

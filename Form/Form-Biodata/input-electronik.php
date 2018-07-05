@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/main_styles.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" href="css/dropdown.css">
-    <link rel="stylesheet" href="css/style-elektronik2.css">
 </head>
 <body>
 <div class="super_container">
@@ -151,36 +150,38 @@
                     <br><br><br />
                 </center>
                 <div class="input-group">
-                    <label class="field a-field a-field_a1 page__field">
-                        <input class="field__input" placeholder=" " >
-                        <span class="field__label-wrap">
-                        <span class="field__label">Merk</span>
-                        </span>
-                    </label>
+                    <div class="col-half">
+                        <center>
+                            <label class="textboxlabel" for="merk">Merk</label>
+                        </center>
+                        <input type="text" placeholder="Merk" name="merk" id="merk" />
+                    </div>
+                    <div class="col-half">
+                        <center>
+                            <label class="textboxlabel" for="noseri">No. Seri</label>
+                        </center>
+                        <input type="text" placeholder="No. Seri" name="noseri" id="noseri" />
+                    </div>
                 </div>
                 <div class="input-group">
-                    <label class="field a-field a-field_a1 page__field">
-                        <input class="field__input" placeholder=" ">
-                        <span class="field__label-wrap">
-                        <span class="field__label">No. Seri</span>
-                        </span>
-                    </label>
+                    <table id="tableperlengkapan">
+                        <tr id='tableperlengkapan'>
+                            <th width="150"><label class="textboxlabel" for="kelengkapan">Kelengkapan</label></th>
+                            <td width="400"><input type="text" placeholder="Kelengkapan" name="kelengkapan" id="kelengkapan" /></td>
+                            <td width="20"></td>
+                            <td width="30"><button type="button" class="btn btn-success" onclick="createtextbox">+</button></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="input-group">
-                    <label class="field a-field a-field_a1 page__field">
-                        <input class="field__input field__input2" placeholder=" " required>
-                        <span class="field__label-wrap">
-                        <span class="field__label">First name</span>
-                        </span>
-                    </label>
-                </div>
-                <div class="input-group">
-                    <h2>Checkboxes</h2>
-  <div class="inputGroup">
-    <input id="option1" name="option1" type="checkbox"/>
-    <label for="option1">Option One</label>
-  </div>
-                </div>
+                <!-- <div class="input-group">
+                    <div class="col-half">
+                        <label for="inp" class="inp">
+                            <input type="text" id="inp" placeholder="&nbsp;">
+                            <span class="label">Merk</span>
+                            <span class="border"></span>
+                        </label>
+                    </div>
+                </div> -->
             </div>
             <div class="col-3">
                 <!--  -->
@@ -204,13 +205,9 @@
 
 </body>
 </html>
-<script type="text/javascript">
-    $(document).click(function(event) {
-      if(
-        $('.toggle > input').is(':checked') &&
-        !$(event.target).parents('.toggle').is('.toggle')
-      ) {
-        $('.toggle > input').prop('checked', false);
-      }
-    })
+<script>
+    function createtextbox()
+    {
+        document.getElementById('tableperlengkapan');
+    }
 </script>

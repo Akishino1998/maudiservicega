@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Biodatamu | Nyervisga?</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/zebra_datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style-regeister-2.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -254,9 +254,10 @@
 <div class="footer-service">
     <?php include('../../layout/footer.php') ?>
 </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
-    <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script> -->
+    <script src="js/zebra_datepicker.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
@@ -277,22 +278,6 @@
                 lang_clear_date: "Hapus",
             });
         });
-
-        $('.select').on('click','li',function(){
-  $('#opened').click();
-  var $t = $(this),
-      $f = $('.field')
-      text = $t.text(),
-      icon = $t.find('i').attr('class');
-  $f.find('label').text(text);
-  $f.find('i').attr('class',icon)
-});
-$('.field').click(function(e){
-  e.preventDefault();
-  $('#opened').click();
-})
-
-
     </script>
 
 </body>
@@ -317,14 +302,7 @@ $('.field').click(function(e){
             $('#combobox_kel').html(data);
         });
     }
-    $(document).click(function(event) {
-      if(
-        $('.toggle > input').is(':checked') &&
-        !$(event.target).parents('.toggle').is('.toggle')
-      ) {
-        $('.toggle > input').prop('checked', false);
-      }
-    })
+
 </script>
 <?php
 if(isset($_POST['submit']))

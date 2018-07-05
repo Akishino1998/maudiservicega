@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Biodatamu | Nyervisga?</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/zebra_datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style-regeister-2.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -152,38 +152,99 @@
                 <div class="input-group">
                     <div class="col-half">
                         <center>
-                            <label class="textboxlabel" for="merk">Merk</label>
+                            <label class="textboxlabel" for="merk"> <strong>Merk</strong> </label>
                         </center>
-                        <input type="text" placeholder="Merk" name="merk" id="merk" />
+                        <input type="text" placeholder="Contoh : Samsung" name="merk" id="merk" />
                     </div>
                     <div class="col-half">
                         <center>
-                            <label class="textboxlabel" for="noseri">No. Seri</label>
+                            <label class="textboxlabel" for="noseri"> <strong>No. Seri</strong> </label>
                         </center>
-                        <input type="text" placeholder="No. Seri" name="noseri" id="noseri" />
+                        <input type="text" placeholder="Contoh : S-315GH" name="noseri" id="noseri" />
                     </div>
                 </div>
                 <div class="input-group">
                     <table id="tableperlengkapan">
-                        <tr id='tableperlengkapan'>
-                            <th width="150"><label class="textboxlabel" for="kelengkapan">Kelengkapan</label></th>
-                            <td width="400"><input type="text" placeholder="Kelengkapan" name="kelengkapan" id="kelengkapan" /></td>
+                        <tr>
+                            <th width="100"><label class="textboxlabel" for="kelengkapan">Kelengkapan</label></th>
+                            <td width="400"><input type="text" placeholder="Contoh : Batrai" name="kelengkapan" id="kelengkapan" /></td>
                             <td width="20"></td>
-                            <td width="30"><button type="button" class="btn btn-success" onclick="createtextbox">+</button></td>
+                            <td width="30"><button type="button" class="btn btn-success" id="createtextbox">+</button></td>
                         </tr>
                     </table>
                 </div>
-                <!-- <div class="input-group">
+                <div class="input-group">
                     <div class="col-half">
-                        <label for="inp" class="inp">
-                            <input type="text" id="inp" placeholder="&nbsp;">
-                            <span class="label">Merk</span>
-                            <span class="border"></span>
-                        </label>
+                        <center>
+                            <label class="textboxlabel" for="keterangan"> <strong>Kenapa Bisa Rusak?</strong> </label>
+                        </center>
+                        <!-- <input type="text" placeholder="Contoh : Kerendem air" name="keterangan" id="keterangan" /> -->
+                        <textarea name="keterangan" rows="2" cols="20" placeholder="Contoh : Kerendem Air"></textarea>
                     </div>
-                </div> -->
+                    <div class="col-half">
+                        <center>
+                            <label class="textboxlabel" for="keterangan"> <strong>Mau Service Di Mana?</strong> </label>
+                        </center>
+                        <div class="input-group">
+                            <input type="radio" name="order_status" value="Ditempat" id="gender-male"/>
+                            <label for="gender-male"> <i class="fa fa-home fa-3x"></i><br />Rumah </label>
+                            <input type="radio" name="order_status" value="Dibawa" id="gender-female"/>
+                            <label for="gender-female"> <i class="fa fa-truck fa-3x"></i><br />Dibawa </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="alert alert-info">
+                        Sesuaikan alamat dengan lokasi elektronik yang mau diservis, ya!
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" />
+                </div>
+                <div class="input-group">
+                    <div class="col-third">
+                        <input type="text" placeholder="RT" name="rt" />
+                    </div>
+                    <div class="col-third">
+                        <input type="text" placeholder="RW" name="rw" />
+                    </div>
+                    <div class="col-third">
+                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-half">
+                        <!-- <input type="text" placeholder="Provinsi" name="provinsi" /> -->
+                        <select name="provinsi" id="combobox_prov" class="combobox">
+                          <option value="" selected="selected" id="items" >Pilih Provinsi</option>
+                        </select>
+                    </div>
+                    <div class="col-half">
+                        <!-- <input type="text" placeholder="Kabupaten" name="kabupaten" /> -->
+                        <select name="kabupaten" id="combobox_kab" class="combobox">
+                          <option value="" selected="selected" id="items">Pilih Kabupaten</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-half">
+                        <!-- <input type="combobox" placeholder="Kecamatan" name="kecamatan" /> -->
+                        <select name="kecamatan" id="combobox_kec" class="combobox">
+                          <option value="" selected="selected" id="items">Pilih Kecamatan</option>
+                        </select>
+                    </div>
+                    <div class="col-half">
+                        <!-- <input type="text" placeholder="Keluaran" name="kelurahan" /> -->
+                        <select name="kelurahan" id="combobox_kel" class="combobox">
+                          <option value="" selected="selected" id="items">Pilih Keluaran</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <button type="button" class="btn btn-info" id="createtextbox">Nyervis Sekarang!</button>
+                </div>
             </div>
-            <div class="col-3">
+            <div class="col-3" id="texx">
                 <!--  -->
             </div>
         </div>
@@ -192,22 +253,53 @@
 <div class="footer-service">
     <?php include('../../layout/footer.php') ?>
 </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"></\script>')</script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="../../plugins/easing/easing.js"></script>
     <script src="js/custom.js"></script>
 
 
 </body>
 </html>
 <script>
-    function createtextbox()
-    {
-        document.getElementById('tableperlengkapan');
+    $(document).ready(function(){
+        var itemsnumber = '';
+        var number = 1;
+        $('#createtextbox').click(function(){
+            var items = $('#kelengkapan'+itemsnumber).val();
+            if(items != ''){
+                var html1 = '<tr><th width="100"></th>';
+                var html2 = '<td width="400"><input type="text" placeholder="Contoh : Batrai" name="kelengkapan" id="kelengkapan'+number+'" /></td>';
+                var html3 = '<td width="20"></td>';
+                var html4 = '<td width="30"></td></tr>';
+                $('#tableperlengkapan').append(html1+html2+html3+html4);
+                number++;
+                itemsnumber++;
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        loadData();
+    });
+
+    function loadData(){
+        var kodepos = document.getElementById('kodepos').value;
+        $.get('SQL/datawilayah_prov.php?id='+kodepos, function(data){
+            $('#combobox_prov').html(data);
+        });
+        $.get('SQL/datawilayah_kab.php?id='+kodepos, function(data){
+            $('#combobox_kab').html(data);
+        });
+        $.get('SQL/datawilayah_kec.php?id='+kodepos, function(data){
+            $('#combobox_kec').html(data);
+        });
+        $.get('SQL/datawilayah_kel.php?id='+kodepos, function(data){
+            $('#combobox_kel').html(data);
+        });
     }
 </script>

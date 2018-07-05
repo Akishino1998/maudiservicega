@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="../../css/hover-min.css">
 	<link href="fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -24,19 +25,21 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="get" action="login.html">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+				<div class="login100-form validate-form" action="">
+					<div class="wrap-input100 validate-input m-b-26">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Username Kamu ....">
+						<input class="input100 username" type="text" name="username" placeholder="Username Kamu ....">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-18">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Password Kamu ....">
+						<input class="input100 password" type="password" name="pass" placeholder="Password Kamu ....">
 						<span class="focus-input100"></span>
 					</div>
+					<div class="box-alert">
 
+					</div>
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -53,7 +56,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="login">
 							Masuk
 						</button>
 						<a href="register.html" class="hvr-icon-forward register-form-btn">
@@ -62,11 +65,12 @@
 					  </a>
 					</div>
 					<a href="../../index.html" class="back-home">Kembali Ke Homenya.</a>
-				</form>
+				</div>
 
 			</div>
 		</div>
 	</div>
+	<link rel="stylesheet" href="css/sweetalert.min.js">
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -74,3 +78,21 @@
 
 </body>
 </html>
+<script>
+	$(document).ready(function(){
+		$('#login').click(function(){
+			if(username != '' && password != ''){
+				var username = $('.username').val();
+				var password = $('.password').val();
+				$.get('SQL/login-proses.php?username='+username+'&password='+password, function(data){
+					$('.box-alert').empty();
+					$('.box-alert').append(data);
+				});
+			}
+		});
+
+		$('.password').change(function(){
+			$('.box-alert').empty();
+		});
+	});
+</script>

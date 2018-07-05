@@ -4,7 +4,9 @@
 *:after {
   box-sizing: border-box;
 }
-
+.alert{
+    width: 100%;
+}
 h4 {
     color: #000;
   position: relative;
@@ -50,8 +52,8 @@ input,
 input[type="radio"] + label,
 input[type="checkbox"] + label:before,
 select option,
-select {
-  width: 100%;
+select, textarea {
+    width: 100%;
    font-family: 'Ubuntu', sans-serif;
   padding: 1em;
   line-height: 1.4;
@@ -245,7 +247,6 @@ select option {
     padding-right: 0;
   }
 }
-
 .combobox{
   width: 260px;
 }

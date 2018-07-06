@@ -1,3 +1,4 @@
+<?php session_start();session_destroy();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,31 +26,33 @@
 					</span>
 				</div>
 
-				<div class="login100-form validate-form" action="">
+				<div class="login100-form validate-form" >
+					<center>
+						<div class="box-alert">
+
+						</div>
+					</center>
 					<div class="wrap-input100 validate-input m-b-26">
 						<span class="label-input100">Username</span>
-						<input class="input100 username" type="text" name="username" placeholder="Username Kamu ....">
+						<input class="input100 username" type="text" name="username" placeholder="Username Kamu ...." required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18">
 						<span class="label-input100">Password</span>
-						<input class="input100 password" type="password" name="pass" placeholder="Password Kamu ....">
+						<input class="input100 password" type="password" name="pass" placeholder="Password Kamu ...." required>
 						<span class="focus-input100"></span>
 					</div>
-					<div class="box-alert">
 
-					</div>
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<!-- <input class="input-checkbox100 rememberme" id="ckb1" type="checkbox" name="rememberme">
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
-							</label>
+							</label> -->
 						</div>
-
 						<div>
-							<a href="#" class="txt1">
+							<a href="lupa-password.php" class="txt1">
 								Lupa Password?
 							</a>
 						</div>
@@ -59,18 +62,16 @@
 						<button class="login100-form-btn" id="login">
 							Masuk
 						</button>
-						<a href="register.html" class="hvr-icon-forward register-form-btn">
+						<a href="register.php" class="hvr-icon-forward register-form-btn">
 						  Belum Punya Akun? Ke sini
 						  <i class="fa fa-chevron-circle-right hvr-icon"></i>
 					  </a>
 					</div>
-					<a href="../../index.html" class="back-home">Kembali Ke Homenya.</a>
+					<a href="../../index.php" class="back-home">Kembali Ke Homenya.</a>
 				</div>
-
 			</div>
 		</div>
 	</div>
-	<link rel="stylesheet" href="css/sweetalert.min.js">
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -81,16 +82,36 @@
 <script>
 	$(document).ready(function(){
 		$('#login').click(function(){
+			var username = $('.username').val();
+			var password = $('.password').val();
 			if(username != '' && password != ''){
-				var username = $('.username').val();
-				var password = $('.password').val();
 				$.get('SQL/login-proses.php?username='+username+'&password='+password, function(data){
-					$('.box-alert').empty();
-					$('.box-alert').append(data);
+					if(data=='sukses'){
+						self.location='../../';
+					}else{
+						$('.box-alert').empty();
+						$('.box-alert').append(data);
+					}
 				});
+			}else{
+				if(username == '' && password == ''){
+					$('.box-alert').empty();
+					$('.box-alert').append('<div class="alert alert-warning">Username dan password anda kosong!</div>');
+				}else if(username == ''){
+					$('.box-alert').empty();
+					$('.box-alert').append('<div class="alert alert-warning">Username anda kosong!</div>');
+				}else if(password == ''){
+					$('.box-alert').empty();
+					$('.box-alert').append('<div class="alert alert-warning">Password anda kosong!</div>');
+				}else{
+					$('.box-alert').empty();
+					$('.box-alert').append('<div class="alert alert-warning">Kesalahan!</div>');
+				}
 			}
 		});
-
+		$('.username').change(function(){
+			$('.box-alert').empty();
+		});
 		$('.password').change(function(){
 			$('.box-alert').empty();
 		});

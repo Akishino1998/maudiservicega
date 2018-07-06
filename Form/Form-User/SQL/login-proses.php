@@ -1,11 +1,11 @@
-
 <?php
+    session_start();
     include('../../../SQL/koneksi.php');
     // $username = 'eko';
     // $password = 'indah';
-     $username = $_GET['username'];
-    $password = $_GET['password'];
-    $sql = "SELECT * FROM user_pelanggan WHERE username='$username'";
+    $username =  strip_tags(trim($_GET['username']));
+    $password = strip_tags(trim($_GET['password']));
+    $sql = "SELECT user_pelanggan.username, password, id_pelanggan FROM user_pelanggan, data_pelanggan WHERE user_pelanggan.username=data_pelanggan.username AND user_pelanggan.username='$username'";
     $hasil = mysqli_query($conn, $sql);
     if(mysqli_num_rows($hasil))
     {
@@ -13,7 +13,8 @@
         {
             if(password_verify($password, $data[1]))
             {
-                //pindahin formnya
+                $_SESSION['user']=$data[2];
+                echo "sukses";
             }
             else
             {

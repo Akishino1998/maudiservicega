@@ -150,77 +150,98 @@
                 </center>
                 <div class="input-group input-group-icon">
                     <div class="col-half">
-                        <input type="text" placeholder="Nama Depan" name="nama_depan" />
+                        <input type="text" placeholder="Nama Depan" name="nama_depan" disabled />
                         <div class="input-icon"><i class="fa fa-user"></i></div>
                     </div>
                     <div class="col-half">
-                        <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
+                        <input type="text" placeholder="Nama Belakang" name="nama_belakang" disabled />
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" />
+                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" disabled/>
                     <div class="input-icon"><i class="fa fa-street-view"></i></div>
                 </div>
                 <div class="input-group">
                     <div class="col-third">
-                        <input type="text" placeholder="RT" name="rt" />
+                        <input type="text" placeholder="RT" name="rt" disabled/>
                     </div>
                     <div class="col-third">
-                        <input type="text" placeholder="RW" name="rw" />
+                        <input type="text" placeholder="RW" name="rw" disabled/>
                     </div>
                     <div class="col-third">
-                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" />
+                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" disabled/>
                     </div>
                 </div>
                 <div class="input-group">
                     <div class="col-half">
-                        <!-- <input type="text" placeholder="Provinsi" name="provinsi" /> -->
-                        <select name="provinsi" id="combobox_prov" class="combobox">
-                          <option value="" selected="selected" id="items" >Pilih Provinsi</option>
-                        </select>
+                        <?php
+                            if(isset($_GET['edit'])=='true'){
+                                echo '<select name="provinsi" id="combobox_prov" class="combobox">';
+                                    echo '<option value="" selected="selected" id="items" >Pilih Provinsi</option>';
+                                echo '</select>';
+                            }else{
+                                echo '<input type="text" placeholder="Provinsi" name="provinsi" disabled/>';
+                            }
+                        ?>
+
                     </div>
                     <div class="col-half">
-                        <!-- <input type="text" placeholder="Kabupaten" name="kabupaten" /> -->
-                        <select name="kabupaten" id="combobox_kab" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Kabupaten</option>
-                        </select>
+                        <?php
+                            if(isset($_GET['edit'])=='true'){
+                                echo '<select name="kabupaten" id="combobox_kab" class="combobox">';
+                                    echo '<option value="" selected="selected" id="items">Pilih Kabupaten</option>';
+                                echo '</select>';
+                            }else{
+                                echo '<input type="text" placeholder="Kabupaten" name="kabupaten" disabled/>';
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="input-group">
                     <div class="col-half">
-                        <!-- <input type="combobox" placeholder="Kecamatan" name="kecamatan" /> -->
-                        <select name="kecamatan" id="combobox_kec" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Kecamatan</option>
-                        </select>
+                        <?php
+                            if(isset($_GET['edit'])=='true'){
+                                echo '<select name="kecamatan" id="combobox_kec" class="combobox">';
+                                    echo '<option value="" selected="selected" id="items">Pilih Kecamatan</option>';
+                                echo '</select>';
+                            }else{
+                                echo '<input type="combobox" placeholder="Kecamatan" name="kecamatan" disabled />';
+                            }
+                        ?>
                     </div>
                     <div class="col-half">
-                        <!-- <input type="text" placeholder="Keluaran" name="kelurahan" /> -->
-                        <select name="kelurahan" id="combobox_kel" class="combobox">
-                          <option value="" selected="selected" id="items">Pilih Keluaran</option>
-                        </select>
+                        <?php
+                            if(isset($_GET['edit'])=='true'){
+                                echo '<select name="kelurahan" id="combobox_kel" class="combobox">';
+                                    echo '<option value="" selected="selected" id="items">Pilih Keluaran</option>';
+                                echo '</select>';
+                            }else{
+                                echo '<input type="text" placeholder="Keluaran" name="kelurahan" disabled/>';
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="email" placeholder="Email" name="email" />
+                    <input type="email" placeholder="Email" name="email" disabled/>
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="email" placeholder="No. Telp" name="nohp" id="nohp" />
+                    <input type="email" placeholder="No. Telp" name="nohp" id="nohp" disabled/>
                     <div class="input-icon"><i class="fa fa-phone"></i></div>
                 </div>
                 <div class="row">
                     <div class="col-half">
                         <h5>Tanggal Lahir</h5>
                         <div class="input-group">
-                            <input type="text" name="tgl_lahir" id="datepicker" placeholder="Tanggal Lahir" />
+                            <input type="text" name="tgl_lahir" id="datepicker" placeholder="Tanggal Lahir" disabled/>
                         </div>
                     </div>
                     <div class="col-half">
                         <h5>Jenis Kelamin</h5>
                         <div class="input-group">
-                        <input type="radio" name="gender" value="laki" id="gender-male"/>
+                        <input type="radio" name="gender" value="laki" id="gender-male" disabled/>
                         <label for="gender-male">Laki-Laki</label>
-                        <input type="radio" name="gender" value="perempuan" id="gender-female"/>
+                        <input type="radio" name="gender" value="perempuan" id="gender-female" disabled/>
                         <label for="gender-female">Perempuan</label>
                         </div>
                     </div>
@@ -285,6 +306,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
         loadData();
+        <?php
+        if(isset($_GET['edit'])){
+            // echo "$('input').;";
+        }
+         ?>
+
     });
 
     function loadData(){

@@ -202,17 +202,17 @@
                         <button type="button" class="btn btn-info" id="btn-change">Ubah Alamat</button>
                     </center>
                 </div>
-                <div class="input-group">
+                <div class="input-group alamat">
                     <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata Graha Indah No. 83)" name="alamat" id="alamat" disabled/>
                 </div>
                 <div class="input-group">
-                    <div class="col-third">
+                    <div class="col-third rt">
                         <input type="text" placeholder="RT" name="rt" id="rt" disabled/>
                     </div>
-                    <div class="col-third">
+                    <div class="col-third rw">
                         <input type="text" placeholder="RW" name="rw" id="rw" disabled/>
                     </div>
-                    <div class="col-third">
+                    <div class="col-third kodepos">
                         <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" disabled />
                     </div>
                 </div>
@@ -265,6 +265,7 @@
     <script src="js/popper.js"></script>
     <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/sweetalert.min.js"></script>
 
 
 </body>
@@ -292,7 +293,7 @@
             service = 'Ditempat';
         });
         $('#dibawa').click(function(){
-            service = 'dibawa';
+            service = 'Dibawa';
         });
 
         $('#btn-confimr').click(function(){
@@ -325,7 +326,12 @@
                 kecamatan : $('#combobox_kec').val(),
                 kelurahan : $('#combobox_kel').val(),
             }, function(data){
-                // alert(data);
+                swal({
+                    title : "Data SUdah Diinput",
+                    text : "Selanjutnya, tinggal menunggu, ya :D",
+                    icon : "success",
+                    button : "Siap!",
+                });
             });
         });
     });
@@ -354,12 +360,39 @@
     }
     function change_add(){
         var position = 1;
+
+
         $('#btn-change').click(function(){
+            var alamat = $('#alamat').val();
+            rt = $('#rt').val();
+            rw = $('#rw').val();
+            kode_pos = $('#kodepos').val();
+            provinsi = $('#combobox_prov').val();
+            kabupaten = $('#combobox_kab').val();
+            kecamatan = $('#combobox_kec').val();
+            kelurahan = $('#combobox_kel').val();
             if(position == 1){
                 $('#btn-change').text('Selesai!');
+                $('.alamat').empty();
+                $('.rt').empty();
+                $('.rw').empty();
+                $('.kodepos').empty();
+                $('.alamat').append('<input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata Graha Indah No. 83)" name="alamat" id="alamat" value="'+alamat+'"/>');
+                $('.rt').append('<input type="text" placeholder="RT" name="rt" id="rt" value="'+rt+'"/>');
+                $('.rw').append('<input type="text" placeholder="RW" name="rw" id="rw" value="'+rw+'"/>');
+                $('.kodepos').append('<input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" value="'+kode_pos+'" />');
+
                 position = 2;
             }else{
                 $('#btn-change').text('Ubah Alamat');
+                $('.alamat').empty();
+                $('.rt').empty();
+                $('.rw').empty();
+                $('.kodepos').empty();
+                $('.alamat').append('<input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata Graha Indah No. 83)" name="alamat" id="alamat"  value="'+alamat+'" disabled/>');
+                $('.rt').append('<input type="text" placeholder="RT" name="rt" id="rt" value="'+rt+'" disabled/>');
+                $('.rw').append('<input type="text" placeholder="RW" name="rw" id="rw" value="'+rw+'" disabled/>');
+                $('.kodepos').append('<input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" value="'+kode_pos+'" disabled/>');
                 position = 1;
             }
         });

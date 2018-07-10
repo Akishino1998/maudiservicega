@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php session_start(); ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Home | Nyervis Gak?</title>
@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 	<link href="css/hover-min.css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="css/dropdown.css">
 	<link rel="stylesheet" href="css/bootstrap-select.min.css">
 
 </head>
@@ -40,14 +41,7 @@
 										<div>ekopujianto48@gmail.com</div>
 									</li>
 								</ul>
-								<div class="top_bar_login ml-auto">
-									<div class="register_button hvr-grow">
-										<a href="#">Daftar</a>
-									</div>
-									<div class="login_button hvr-grow">
-										<a href="#">Masuk</a>
-									</div>
-								</div>
+								<?php include('layout/btn-login.php') ?>
 							</div>
 						</div>
 					</div>

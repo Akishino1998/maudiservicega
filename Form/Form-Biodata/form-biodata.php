@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['user']))
+{
+    header('location:../../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -35,7 +42,7 @@
 								</ul>
 								<div class="top_bar_login ml-auto">
                                     <?php
-                                    if(isset($_GET['tes']))
+                                    if(!isset($_SESSION['user']))
                                     {
                                     ?>
                                     <div class="register_button hvr-grow">
@@ -62,7 +69,7 @@
                                           Data Elektronikku</i>
                                         </li>
                                         <li>
-                                          sign out<i class="icon sign"></i>
+                                          <a href="SQL/sigout.php">Keluar</a> <i class="icon sign"></i>
                                         </li>
 
                                       </ul>

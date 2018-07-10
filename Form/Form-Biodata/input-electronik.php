@@ -128,19 +128,18 @@
         <div class="row">
             <div class="col-3">
                 <center>
-                    <h4>Foto Kamu</h4>
+                    <h4>Mau Nyervis apa?</h4>
                     <br>
-                    <img src="image/profile-blank.png" alt="" class="img-rounded" width="200">
-                    <br><br>
-                    <?php
-                        if(isset($_GET['edit'])){
-                            echo "<p>Size fotonya jangan besar-besar, ya!</p>";
-                            echo "<div class='btn btn-default image-preview-input'>
-                                    <input type='file' accept='image/png, image/jpeg, image/gif' name='input-file-preview'/>
-                                </div>
-                            <button type='button' class='btn btn-primary'>Upload</button>";
-                        }
-                    ?>
+                    <img src="" alt="" class="img-rounded" width="200" id="elektronik-service">
+
+                    <div class="input-group">
+                        <div class="col-half">
+                            <!-- <input type="text" placeholder="Provinsi" name="provinsi" /> -->
+                            <select name="provinsi" id="combobox_elekronik" class="combobox">
+                              <option value="" selected id="items-service" >Pilih Elektronik</option>
+                            </select>
+                        </div>
+                    </div>
                 </center>
             </div>
             <div class="col-6">
@@ -166,8 +165,8 @@
                 <div class="input-group">
                     <table id="tableperlengkapan">
                         <tr>
-                            <th width="100"><label class="textboxlabel" for="kelengkapan">Kelengkapan</label></th>
-                            <td width="400"><input type="text" placeholder="Contoh : Batrai" name="kelengkapan" id="kelengkapan" /></td>
+                            <th width="100"><label class="textboxlabel" for="kelengkapan0">Kelengkapan</label></th>
+                            <td width="400"><input type="text" placeholder="Contoh : Batrai" name="kelengkapan" id="kelengkapan0" /></td>
                             <td width="20"></td>
                             <td width="30"><button type="button" class="btn btn-success" id="createtextbox">+</button></td>
                         </tr>
@@ -179,7 +178,7 @@
                             <label class="textboxlabel" for="keterangan"> <strong>Kenapa Bisa Rusak?</strong> </label>
                         </center>
                         <!-- <input type="text" placeholder="Contoh : Kerendem air" name="keterangan" id="keterangan" /> -->
-                        <textarea name="keterangan" rows="2" cols="20" placeholder="Contoh : Kerendem Air"></textarea>
+                        <textarea name="keterangan" rows="2" cols="20" placeholder="Contoh : Kerendem Air" id="keterangan"></textarea>
                     </div>
                     <div class="col-half">
                         <center>
@@ -187,9 +186,9 @@
                         </center>
                         <div class="input-group">
                             <input type="radio" name="order_status" value="Ditempat" id="gender-male"/>
-                            <label for="gender-male"> <i class="fa fa-home fa-3x"></i><br />Rumah </label>
+                            <label for="gender-male" id="ditempat"> <i class="fa fa-home fa-3x"></i><br />Rumah </label>
                             <input type="radio" name="order_status" value="Dibawa" id="gender-female"/>
-                            <label for="gender-female"> <i class="fa fa-truck fa-3x"></i><br />Dibawa </label>
+                            <label for="gender-female" id="dibawa"> <i class="fa fa-truck fa-3x"></i><br />Dibawa </label>
                         </div>
                     </div>
                 </div>
@@ -199,17 +198,22 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" />
+                    <center>
+                        <button type="button" class="btn btn-info" id="btn-change">Ubah Alamat</button>
+                    </center>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata Graha Indah No. 83)" name="alamat" id="alamat" disabled/>
                 </div>
                 <div class="input-group">
                     <div class="col-third">
-                        <input type="text" placeholder="RT" name="rt" />
+                        <input type="text" placeholder="RT" name="rt" id="rt" disabled/>
                     </div>
                     <div class="col-third">
-                        <input type="text" placeholder="RW" name="rw" />
+                        <input type="text" placeholder="RW" name="rw" id="rw" disabled/>
                     </div>
                     <div class="col-third">
-                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" />
+                        <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" disabled />
                     </div>
                 </div>
                 <div class="input-group">
@@ -241,7 +245,8 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <button type="button" class="btn btn-info" id="createtextbox">Nyervis Sekarang!</button>
+                    <button type="button" class="btn btn-info" id="btn-confimr">Nyervis Sekarang!</button>
+                    <button type="button" class="btn btn-wrong" id="createtextbox">Batal</button>
                 </div>
             </div>
             <div class="col-3" id="texx">
@@ -264,9 +269,11 @@
 
 </body>
 </html>
-<script>
+<script type="text/javascript">
     $(document).ready(function(){
-        var itemsnumber = '';
+        loadData();
+        change_add();
+        var itemsnumber = 0;
         var number = 1;
         $('#createtextbox').click(function(){
             var items = $('#kelengkapan'+itemsnumber).val();
@@ -280,11 +287,47 @@
                 itemsnumber++;
             }
         });
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        loadData();
+        var service = '';
+        $('#ditempat').click(function(){
+            service = 'Ditempat';
+        });
+        $('#dibawa').click(function(){
+            service = 'dibawa';
+        });
+
+        $('#btn-confimr').click(function(){
+            // alert(service);
+            var perlengkapan = '';
+            for (i = 0; i < number;i++){
+                if(i == 0){
+                    perlengkapan = $('#kelengkapan'+i).val();
+                }else{
+                    perlengkapan = perlengkapan +', '+ $('#kelengkapan'+i).val();
+                }
+            }
+            // ditempat dibawa
+
+
+            $.post('SQL/input_proses.php',
+            {
+                id_elektronik : $('#combobox_elekronik').val(),
+                merk : $('#merk').val(),
+                noseri : $('#noseri').val(),
+                kode_pos : $('#kodepos').val(),
+                perlengkapan : perlengkapan,
+                keterangan : $('#keterangan').val(),
+                order_status : service,
+                alamat : $('#alamat').val(),
+                rt : $('#rt').val(),
+                rw : $('#rw').val(),
+                provinsi : $('#combobox_prov').val(),
+                kabupaten : $('#combobox_kab').val(),
+                kecamatan : $('#combobox_kec').val(),
+                kelurahan : $('#combobox_kel').val(),
+            }, function(data){
+                // alert(data);
+            });
+        });
     });
 
     function loadData(){
@@ -300,6 +343,25 @@
         });
         $.get('SQL/datawilayah_kel.php?id='+kodepos, function(data){
             $('#combobox_kel').html(data);
+        });
+        $.get('SQL/items-elektronik.php', function(data){
+            $('#combobox_elekronik').html(data);
+        });
+        <?php if(isset($_GET['id'])){
+            // $('#items-service').val()
+            // mengubahnya menjadi selected agar terselect nantinya
+        } ?>
+    }
+    function change_add(){
+        var position = 1;
+        $('#btn-change').click(function(){
+            if(position == 1){
+                $('#btn-change').text('Selesai!');
+                position = 2;
+            }else{
+                $('#btn-change').text('Ubah Alamat');
+                position = 1;
+            }
         });
     }
 </script>

@@ -1,4 +1,5 @@
 <?php
+    sesiion_start();
     include('../../../SQL/koneksi.php');
     $username = $_GET['username'];
     //password_hash($password_asli, PASSWORD_DEFAULT);
@@ -16,5 +17,7 @@
         $sql = "INSERT INTO data_pelanggan(username, create_date) VALUES('$username', NOW())";
         mysqli_query($conn, $sql);
         echo "sukses";
+        session_destroy();
+
     }
  ?>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Biodatamu | Nyervisga?</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style-service.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -195,13 +195,11 @@
 </div>
 
 <br><br>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
     <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="../../plugins/easing/easing.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
 </body>

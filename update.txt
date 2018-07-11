@@ -45,3 +45,6 @@ Fix Footer
 
 v0.9
 Login dan register done wkwk
+
+v0.10
+80% UI

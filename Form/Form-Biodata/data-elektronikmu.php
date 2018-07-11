@@ -20,6 +20,13 @@
         th, td{
             color:#000;
         }
+        #btn-detail{
+            width: 50px;
+            height: 20px;
+            padding: 0px;
+            /* padding-top: -5px; */
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
@@ -159,58 +166,52 @@
 <form class="" action="form-biodata.php" method="post">
     <div class="container bio">
         <div class="row">
-            <div class="col-2">
+            <div class="col-1">
 
             </div>
             <div class="col-8">
                 <center>
-                    <h4>Data Elektronik Yang Kamu Servise</h4>
+                    <h4>Data Elektronik Yang Sedang Diservise</h4>
                     <br>
                 </center>
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>NAMA</th>
-                            <th>Tempat</th>
+                            <th>Kode Order</th>
+                            <th>Elektrnik</th>
+                            <th>Merk</th>
+                            <th>No. Seri</th>
+                            <th>Nyervis di?</th>
+                            <th>Status</th>
+                            <th>Detail</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Eko</td>
-                            <td>Samarinda</td>
-                        </tr>
+                    <tbody id="items">
+                        <script src="js/jquery-3.3.1.js"></script>
+                        <script>
+                        function loadData(){
+                            $.get('SQL/data-elektronik.php', function(data){
+                                $('#items').html(data);
+                            });
+                        }
+                            loadData();
+                        </script>
                     </tbody>
                 </table>
             </div>
-            <div class="col-2">
+            <div class="col-3">
+                <center>
+                    <h4>Mau Nyervis apa?</h4>
+                    <br>
+                    <img src="image/profile-blank.png" alt="" class="img-rounded" width="200" id="elektronik-service">
+                    <p>
+                        Tanggal Dibuat : <br />
+                        Status : <br />
+                        Kurir : <br />
 
+                    </p>
+
+                </center>
             </div>
         </div>
     </div>
@@ -220,19 +221,28 @@
 <div class="footer-service">
     <?php include('../../layout/footer.php') ?>
 </div>
-<script src="js/jquery-3.3.1.js"></script>
+<!-- <script src="js/jquery-3.3.1.js"></script> -->
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.bootstrap4.min.js"></script>
 <script src="js/popper.js"></script>
 <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="../../plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/sweetalert.min.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script>
 $(document).ready(function() {
+
     $('#example').DataTable();
-} );
+});
+
+function loadData(){
+    $.get('SQL/data-elektronik.php', function(data){
+        $('#items').html(data);
+    });
+}
+function getDetailData(){
+
+}
 </script>
 </body>
 </html>
